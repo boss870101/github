@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+</head>
+<style>
+  
+  ul{
+    margin: 0;
+    padding: 0;
+    margin-left: 25px;
+  }
+
+  .box{
+    width: 400px;
+    height: 450px;
+    border: 1px solid #000;
+    position: relative;
+    z-index: 2;
+  }
+
+  .box #show-bar{
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #88F5FF;
+  }
+
+  #box{
+    width: 50px;
+    height: 50px;
+    background-color: #FFE900;
+    border-radius: 10px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  #toolbar{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 0;
+    right: -212px;
+    border: 1px solid #000;
+    padding: 5px;
+    display: none;
+  }
+
+  #toolbar ul li{
+    list-style: none;
+    float: left;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    line-height: 40px;
+    text-align: center;
+    margin-left: 5px;
+  }
+
+  h3{
+    clear: both;
+    margin: 0px;
+    padding: 10px 0;
+  }
+
+  span{
+    display: inline-block;
+    clear: both;
+    width: 50px;
+    height: 30px;
+    margin-top: 15px;
+    line-height: 30px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    text-align: center; 
+    margin-left: 30px;
+  }
+</style>
+<body>
+  <div class="box">
+    <div id="show-bar">点此设置样式</div>
+    <div id="box"></div>
+    <div id="toolbar">
+      <ul class="color">
+        <h3>选择颜色</h3>
+        <li id="red">红色</li>
+        <li id="blue">蓝色</li>
+        <li id="green">绿色</li>
+      </ul>
+      <ul class="width-size">
+        <h3>宽度尺寸</h3>
+        <li id="width-s">100</li>
+        <li id="width-m">200</li>
+        <li id="width-l">300</li>
+      </ul>
+      <ul class="heght-size">
+        <h3>高度尺寸</h3>
+        <li id="height-s">100</li>
+        <li id="height-m">200</li>
+        <li id="height-l">300</li>
+      </ul>
+      <span id="recovery">恢复</span>
+      <span id="determine">确定</span>
+    </div>
+  </div>
+  <script>
+    var bar= document.getElementById('show-bar');
+        red1= document.getElementById('red');
+        blue1= document.getElementById('blue');
+        green1= document.getElementById('green');
+        box= document.getElementById('box');
+        toolbar= document.getElementById('toolbar')
+        wids= document.getElementById('width-s');
+        widm= document.getElementById('width-m');
+        widl= document.getElementById('width-l');
+        heis= document.getElementById('height-s');
+        heim= document.getElementById('height-m');
+        heil= document.getElementById('height-l');
+        recovery= document.getElementById('recovery');
+        determine= document.getElementById('determine');
+        
+    bar.onclick= function show(){
+      bar.style.background= "#F521FF";
+      toolbar.style.display= 'block';
+    }
+
+    red1.onclick= function red(){
+      red1.style.background= 'red';
+      box.style.background= 'red';
+      blue1.style.background= '';
+      green1.style.background= '';
+      recovery.style.background= '';
+    }
+
+    blue1.onclick= function blue(){
+      box.style.background= 'blue';
+      blue1.style.background= 'blue';
+      red1.style.background= '';
+      recovery.style.background= '';
+    }
+
+    green1.onclick= function green(){
+      box.style.background= 'green';
+      green1.style.background= 'green';
+      red1.style.background= '';
+      blue1.style.background= '';
+      recovery.style.background= '';
+    }
+
+    wids.onclick=function ws(){
+      box.style.width= '100px';
+      wids.style.background= '#F521FF';
+      widm.style.background= '';
+      widl.style.background= '';
+      recovery.style.background= '';
+    }
+
+    widm.onclick=function wm(){
+      box.style.width= '200px';
+      widm.style.background= '#F521FF';
+      wids.style.background= '';
+      widl.style.background= '';
+      recovery.style.background= '';
+    }
+
+    widl.onclick=function wl(){
+      box.style.width= '300px';
+      widl.style.background= '#F521FF';
+      widm.style.background= '';
+      wids.style.background= '';
+      recovery.style.background= '';
+    }
+
+    heis.onclick= function hs(){
+      box.style.height= '100px';
+      heis.style.background= '#F521FF';
+      heim.style.background= '';
+      heil.style.background= '';
+      recovery.style.background= '';
+    }
+
+    heim.onclick= function hm(){
+      box.style.height= '200px';
+      heim.style.background= '#F521FF';
+      heis.style.background= '';
+      heil.style.background= '';
+      recovery.style.background= '';
+    }
+
+    heil.onclick= function hl(){
+      box.style.height= '300px';
+      heil.style.background= '#F521FF';
+      heim.style.background= '';
+      heis.style.background= '';
+      recovery.style.background= '';
+    }
+
+    recovery.onclick=function reset(){
+      box.style.width= '50px';
+      box.style.height= '50px';
+      box.style.background= '#FFE900';
+      recovery.style.background= '#F521FF';
+      wids.style.background= '';
+      heis.style.background= '';
+      widm.style.background= '';
+      heim.style.background= '';
+      heil.style.background= '';
+      widl.style.background= '';
+      red1.style.background= '';
+      blue1.style.background= '';
+      green1.style.background= '';
+    }
+
+    determine.onclick=function hide(){
+      toolbar.style.display= 'none';
+      recovery.style.background= '';
+    }
+  </script>
+</body>
+</html>
